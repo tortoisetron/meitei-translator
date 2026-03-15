@@ -9,13 +9,13 @@ st.title("📝 Meitei Mayek Translator")
 
 # with st.sidebar:
 #     st.header("Settings")
-api_key = os.getenv("GOOGLE_API_KEY", "AIzaSyAkoVASsCpQP0qa6oCdfAMG6XjAI9ynis0")
+api_key = os.getenv("GOOGLE_API_KEY")
 if api_key:
     os.environ["GOOGLE_API_KEY"] = api_key
-# else:
-#     api_key = st.text_input("Google API Key", type="password")
-#     if api_key:
-#         os.environ["GOOGLE_API_KEY"] = api_key
+else:
+    api_key = st.text_input("Google API Key", type="password")
+    if api_key:
+        os.environ["GOOGLE_API_KEY"] = api_key
 
 # model_id = st.text_input("Model ID", value="gemini-3-flash-preview")
 model_id = "gemini-3-flash-preview"
